@@ -1,4 +1,4 @@
-package ru.kuzmina.paretoOpt;
+package ru.kuzmina.paretoOpt.optimize;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,8 +6,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class Functional {
+
+    private Logger log = Logger.getLogger(Functional.class.getName());
 
     private List<List<Double>> g = new ArrayList<>();
 
@@ -20,6 +23,10 @@ public class Functional {
             }
             g.add(buff);
         }
+    }
+
+    public Functional(List<List<Double>> g) {
+        this.g = g;
     }
 
     public List<List<Double>> get() {
@@ -39,6 +46,7 @@ public class Functional {
             default:
                 break;
         }
+        log.info("Functional for [i] strategy after sort: " + gI);
         return gI.get(gI.size() - 1);
     }
 
@@ -50,6 +58,7 @@ public class Functional {
                 setOfj.add(idx);
             }
         }
+        log.info("Idx of opt value: " + setOfj);
         return setOfj;
     }
 

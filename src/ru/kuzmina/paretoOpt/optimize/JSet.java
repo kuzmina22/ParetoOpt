@@ -1,4 +1,4 @@
-package ru.kuzmina.paretoOpt;
+package ru.kuzmina.paretoOpt.optimize;
 
 import java.util.ArrayList;
 import java.util.HashSet;
